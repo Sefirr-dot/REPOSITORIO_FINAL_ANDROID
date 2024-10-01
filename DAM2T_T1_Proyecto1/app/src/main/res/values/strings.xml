@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">DAM2T_T1_Proyecto1</string>
+    <string name="validar">Validar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="nombre">Nombre</string>
+    <string name="pimerApellido">Primer Apellido</string>
+    <string name="segundoApellido">Segundo Apellido</string>
+    <string name="telefono">Telefono</string>
+    <string name="fecha_nacimiento">Fecha Nacimiento</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="rep_contrasenia">Repetir Contraseña</string>
 </resources>

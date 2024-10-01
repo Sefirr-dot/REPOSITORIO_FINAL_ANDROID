@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DAM2T_T1_Proyecto1</string>
+    <string name="validar">Validate</string>
+    <string name="limpiar">Clean</string>
+    <string name="nombre">Name</string>
+    <string name="pimerApellido">Last Name</string>
+    <string name="segundoApellido">Second Last Name</string>
+    <string name="telefono">Phone</string>
+    <string name="fecha_nacimiento">Birthdate</string>
+    <string name="correo_electronico">Email</string>
+    <string name="contrasenia">Password</string>
+    <string name="rep_contrasenia">Repeat Password</string>
+</resources>

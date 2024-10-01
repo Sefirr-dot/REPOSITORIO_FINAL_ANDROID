@@ -5,15 +5,224 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B89797"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/etNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="@string/nombre"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/etApellido1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/nombre"
+        app:layout_constraintEnd_toStartOf="@+id/etNombre"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etApellido1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="@string/pimerApellido"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvApellido1"
+        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+
+    <TextView
+        android:id="@+id/tvApellido1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="2dp"
+        android:text="@string/pimerApellido"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etApellido1"
+        app:layout_constraintEnd_toStartOf="@+id/etApellido1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etApellido2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="6dp"
+        android:ems="10"
+        android:hint="@string/segundoApellido"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvApellido2"
+        app:layout_constraintTop_toBottomOf="@+id/etApellido1" />
+
+    <TextView
+        android:id="@+id/tvFechaNacimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha_nacimiento"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etdFechaNacimiento"
+        app:layout_constraintEnd_toStartOf="@+id/etdFechaNacimiento"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:text="@string/correo_electronico"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edtEmail"
+        app:layout_constraintEnd_toStartOf="@+id/edtEmail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etdFechaNacimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="@string/fecha_nacimiento"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvFechaNacimiento"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <TextView
+        android:id="@+id/tvApellido2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="@string/segundoApellido"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etApellido2"
+        app:layout_constraintEnd_toStartOf="@+id/etApellido2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTlfn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/telefono"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextPhone"
+        app:layout_constraintEnd_toStartOf="@+id/editTextPhone"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btValidar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/validar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="@string/limpiar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:hint="@string/correo_electronico"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etdFechaNacimiento" />
+
+    <EditText
+        android:id="@+id/etPswd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/contrasenia"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/etPswd2"
+        app:layout_constraintEnd_toEndOf="@+id/etPswd2" />
+
+    <TextView
+        android:id="@+id/tvContrasenia2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/rep_contrasenia"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etPswd2"
+        app:layout_constraintEnd_toStartOf="@+id/etPswd2"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvContrasenia1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contrasenia"
+        app:layout_constraintBaseline_toBaselineOf="@+id/etPswd1"
+        app:layout_constraintEnd_toStartOf="@+id/etPswd1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etPswd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="249dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="250dp"
+        android:ems="10"
+        android:hint="@string/rep_contrasenia"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvContrasenia2"
+        app:layout_constraintTop_toTopOf="@+id/editTextPhone"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/etApellido2"
+        app:layout_constraintTop_toBottomOf="@+id/etApellido2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="138dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="59dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btValidar"
+        app:layout_constraintEnd_toEndOf="@+id/btLimpiar"
+        app:layout_constraintStart_toStartOf="@+id/btValidar"
+        app:layout_constraintTop_toTopOf="@+id/tvContrasenia2"
+        app:srcCompat="@drawable/duck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
