@@ -8,12 +8,16 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material3.DatePickerDialog
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.ui.semantics.text
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputLayout
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +33,22 @@ class MainActivity : AppCompatActivity() {
         } else {
             // Email is invalid, show error message
             email.error = "Correo electronico Invalido" // Asignar el error al EditText correcto
+        }
+        val etFecha = findViewById<EditText>(R.id.etdFechaNacimiento)
+        etFecha.setOnClickListener {
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+            val dpd = android.app.DatePickerDialog(this, { _, year, monthOfYear, dayOfMonth ->
+                // Formatear la fecha
+                val fechaFormateada =
+                    String.format("%02d/%02d/%04d", dayOfMonth, monthOfYear + 1, year)
+                etFecha.setText(fechaFormateada)
+            }, year, month, day)
+
+            dpd.show()
         }
 
         val password1: EditText = findViewById(R.id.etPswd1)
