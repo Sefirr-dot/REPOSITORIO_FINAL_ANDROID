@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ImagenesYSeekBar</string>
+    <string name="name">Nombre</string>
+    <string name="hintNombre">Introduce tu Nombre</string>
+</resources>
