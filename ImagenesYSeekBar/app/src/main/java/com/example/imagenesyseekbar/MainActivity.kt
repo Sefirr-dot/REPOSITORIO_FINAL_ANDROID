@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.imagenesyseekbar.databinding.ActivityMainBinding
+import modelo.PedidoPizzeria
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,17 +28,67 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val image1 = R.drawable.pizzita1
+        val image2 = R.drawable.ic_comida_foreground
+        var currentImage = R.drawable.pizzita1
 
-        val miTag = "Antonio"
+        val miTag = "Mi Logg Maggg"
 
         binding.btAceptar.setOnClickListener {
 
-            Log.i(miTag, "Hola ${binding.ptNombre.text}")
-            Toast.makeText(this, "Hola ${binding.ptNombre.text}", Toast.LENGTH_SHORT).show()
+            if(binding.swLicencia.isChecked){
+                var mensaje = "Hola ${binding.ptNombre.text} has pedido una Pizza de "
+                if(binding.cbBacon.isChecked){
+                    mensaje += "Bacon "
+                }
+                if(binding.cbCebolla.isChecked){
+                    mensaje += "Cebolla "
+                }
+                if(binding.cbQueso.isChecked) {
+                    mensaje += "Queso "
+                }
+                if(!binding.cbBacon.isChecked && !binding.cbQueso.isChecked && !binding.cbCebolla.isChecked){
+                    mensaje += "Margarita "
+
+                }
+                if (binding.rbBordeFino.isChecked){
+                    mensaje += "con Borde Fino"
+                    Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+                }else{
+                    mensaje += "con Borde Pan"
+                    Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+                }
+
+            }else{
+                Toast.makeText(this, "Acepta la Licencia", Toast.LENGTH_SHORT).show()
+            }
+
+            val order = PedidoPizzeria(binding.ptNombre.text.toString(),binding.cbQueso.isChecked,binding.cbBacon.isChecked,binding.cbCebolla.isChecked,binding.rbBordeFino.isChecked, binding.rdBordePan.isChecked)
+            Log.i(miTag, order.toString())
         }
         binding.btBorrar.setOnClickListener {
             binding.ptNombre.text.clear()
+            binding.cbBacon.isChecked = false
+            binding.cbCebolla.isChecked = false
+            binding.cbQueso.isChecked = false
+            binding.rbBordeFino.isChecked = true
+            binding.swLicencia.isChecked = false
         }
+
+        binding.imgBoton.setOnClickListener {
+            if(currentImage == image1){
+                binding.imgPizza.setImageResource(image2)
+                currentImage = image2
+            }else{
+                binding.imgPizza.setImageResource(image1)
+                currentImage = image1
+            }
+        }
+
+
+
+    }
+    class pedido(){
 
     }
 }
