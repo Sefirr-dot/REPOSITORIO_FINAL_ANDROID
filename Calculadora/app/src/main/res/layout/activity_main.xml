@@ -10,171 +10,155 @@
 
     <TextView
         android:id="@+id/txtNum2"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="224dp"
         android:text="@string/segundoNumero"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etxtn2"
-        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintEnd_toEndOf="@+id/etxtn2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.16" />
 
     <TextView
         android:id="@+id/txtNum"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="158dp"
         android:text="@string/resultado"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtResultado"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintEnd_toEndOf="@+id/txtResultado"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.258" />
 
     <TextView
         android:id="@+id/txtNum1"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="13dp"
         android:text="@string/primerNumero"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/etxtn1"
-        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.064" />
 
     <EditText
         android:id="@+id/etxtn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="70dp"
         android:ems="10"
         android:hint="@string/primerNumero"
         android:inputType="number|numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/etxtn2"
+        app:layout_constraintBottom_toBottomOf="@+id/etxtn2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNum1"
+        app:layout_constraintStart_toStartOf="@+id/txtNum1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etxtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="68dp"
         android:ems="10"
         android:hint="@string/segundoNumero"
         android:inputType="number|numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNum2"
-        app:layout_constraintTop_toBottomOf="@+id/etxtn1" />
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/txtResultado"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="83dp"
-        android:text="TextView"
+        android:layout_width="120dp"
+        android:layout_height="21dp"
         android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtNum"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNum" />
+        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.258" />
 
     <TextView
         android:id="@+id/txtModuloDivision"
         android:layout_width="106dp"
         android:layout_height="0dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="188dp"
-        android:text="TextView"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="144dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtResultado"
-        app:layout_constraintStart_toStartOf="@+id/btDivision"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="188dp"
+        android:layout_width="152dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/resto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btMultiplicacion" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtModuloDivision"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btSuma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="268dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/suma"
-        app:layout_constraintBottom_toTopOf="@+id/btResta"
-        app:layout_constraintEnd_toStartOf="@+id/btMultiplicacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/btResta"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btResta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/resta"
-        app:layout_constraintBottom_toTopOf="@+id/btDivision"
-        app:layout_constraintStart_toStartOf="@+id/btSuma"
-        app:layout_constraintTop_toBottomOf="@+id/btSuma" />
+        app:layout_constraintBottom_toBottomOf="@+id/btDivision"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btDivision"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="68dp"
         android:text="@string/division"
-        app:layout_constraintBottom_toTopOf="@+id/btMultiplicacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btResta" />
+        app:layout_constraintBottom_toBottomOf="@+id/btMultiplicacion"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btMultiplicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="52dp"
         android:text="@string/multiplicacion"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toEndOf="@+id/btSuma"
-        app:layout_constraintTop_toBottomOf="@+id/btDivision" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="195dp"
-        android:layout_height="414dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtModuloDivision"
+        android:layout_width="233dp"
+        android:layout_height="304dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btMultiplicacion"
-        app:layout_constraintTop_toBottomOf="@+id/etxtn2"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/calculadora" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
