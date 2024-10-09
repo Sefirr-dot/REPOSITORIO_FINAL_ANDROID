@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Acepta la Licencia", Toast.LENGTH_SHORT).show()
             }
 
-            val order = PedidoPizzeria(binding.ptNombre.text.toString(),binding.cbQueso.isChecked,binding.cbBacon.isChecked,binding.cbCebolla.isChecked,binding.rbBordeFino.isChecked, binding.rdBordePan.isChecked)
+            val order = PedidoPizzeria(binding.ptNombre.text.toString(),binding.cbQueso.isChecked,binding.cbBacon.isChecked,binding.cbCebolla.isChecked,binding.rbBordeFino.isChecked, binding.rdBordePan.isChecked, binding.seekBar1.progress)
             Log.i(miTag, order.toString())
         }
         binding.btBorrar.setOnClickListener {
@@ -73,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             binding.cbQueso.isChecked = false
             binding.rbBordeFino.isChecked = true
             binding.swLicencia.isChecked = false
+            binding.seekBar1.progress = 0
         }
 
         binding.imgBoton.setOnClickListener {
@@ -84,11 +86,20 @@ class MainActivity : AppCompatActivity() {
                 currentImage = image1
             }
         }
+        binding.seekBar1.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                Log.i(miTag, "Progress: $progress")
+            }
 
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                Log.i(miTag, "Start ${binding.seekBar1.progress}")
+            }
 
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                Log.i(miTag, "Start ${binding.seekBar1.progress}")
+            }
 
+        })
     }
-    class pedido(){
 
-    }
 }
