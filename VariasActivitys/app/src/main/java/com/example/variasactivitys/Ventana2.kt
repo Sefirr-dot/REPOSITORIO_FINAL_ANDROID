@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.variasactivitys.databinding.ActivityMainBinding
 import com.example.variasactivitys.databinding.ActivityVentana2Binding
+import modelo.Almacen
 import modelo.Persona
 
 class Ventana2 : AppCompatActivity() {
@@ -39,6 +40,7 @@ class Ventana2 : AppCompatActivity() {
             insets
         }
 
+        binding.tvVolver.text = Almacen.listaPersonas.toString()
         binding.btVolver.setOnClickListener {
             finish()
         }

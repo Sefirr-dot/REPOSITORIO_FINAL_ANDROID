@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.variasactivitys.databinding.ActivityMainBinding
+import modelo.Almacen
 import modelo.Persona
 
 class MainActivity : AppCompatActivity() {
@@ -53,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             intent1.putExtra("objeto",bundle)
             startActivity(intent1)
 
+            Almacen.addPersona(pe)
+            startActivity(intent1)
 
         }
 
