@@ -1,8 +1,10 @@
 package com.example.variasactivitys
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,6 +13,16 @@ import modelo.Persona
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private val SECON_ACTIVITY_REQUEST_CODE =0
+
+    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+        if(result.resultCode == Activity.RESULT_OK){
+            val data: Intent? = result.data
+            val returnString = data!!.getStringExtra("keyName")
+            binding.etNombre.setText(returnString)
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -43,5 +55,41 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+
+
+        binding.btRespuesta1.setOnClickListener{
+            val intent = Intent(this, Ventana2::class.java)
+            startActivityForResult(intent, SECON_ACTIVITY_REQUEST_CODE)
+
+        }
+
+        binding.btRespuesta2.setOnClickListener{
+            val intent = Intent(this, Ventana2::class.java)
+            resultLauncher.launch(intent)
+        }
+
+        binding.btReiniciar.setOnClickListener{
+            var ine : Intent= intent
+            finish()
+            startActivity(ine)
+        }
+
+
+
     }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == SECON_ACTIVITY_REQUEST_CODE){
+            if(resultCode == Activity.RESULT_OK){
+                val returnString = data!!.getStringExtra("keyName")
+                binding.etNombre.setText(returnString)
+            }
+        } else {
+            binding.etNombre.setText("No ha devuelto nada")
+        }
+    }
+
+
 }

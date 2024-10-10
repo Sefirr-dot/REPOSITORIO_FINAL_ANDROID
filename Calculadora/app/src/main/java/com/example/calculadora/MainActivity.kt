@@ -1,6 +1,7 @@
 package com.example.calculadora
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,7 +21,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.txtModuloDivision.visibility = View.INVISIBLE
+        binding.textView3.visibility = View.INVISIBLE
         setContentView(binding.root)
         binding.btSuma.setOnClickListener { suma() }
         binding.btResta.setOnClickListener { resta() }
@@ -36,24 +40,32 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun suma(){
+        binding.txtModuloDivision.visibility = View.INVISIBLE
+        binding.textView3.visibility = View.INVISIBLE
         val num1 = binding.etxtn1.text.toString().toDouble()
         val num2 = binding.etxtn2.text.toString().toDouble()
         val resultado = num1 + num2
         binding.txtResultado.text = resultado.toString()
     }
     fun resta(){
+        binding.txtModuloDivision.visibility = View.INVISIBLE
+        binding.textView3.visibility = View.INVISIBLE
         val num1 = binding.etxtn1.text.toString().toDouble()
         val num2 = binding.etxtn2.text.toString().toDouble()
         val resultado = num1 - num2
         binding.txtResultado.text = resultado.toString()
     }
     fun multiplicacion(){
+        binding.txtModuloDivision.visibility = View.INVISIBLE
+        binding.textView3.visibility = View.INVISIBLE
         val num1 = binding.etxtn1.text.toString().toDouble()
         val num2 = binding.etxtn2.text.toString().toDouble()
         val resultado = num1 * num2
         binding.txtResultado.text = resultado.toString()
     }
     fun division(){
+        binding.txtModuloDivision.visibility = View.VISIBLE
+        binding.textView3.visibility = View.VISIBLE
         val num1 = binding.etxtn1.text.toString().toDouble()
         val num2 = binding.etxtn2.text.toString().toDouble()
         val resultado = num1 / num2

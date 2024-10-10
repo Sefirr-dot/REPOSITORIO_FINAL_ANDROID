@@ -1,5 +1,7 @@
 package com.example.variasactivitys
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,12 +25,12 @@ class Ventana2 : AppCompatActivity() {
 //        val p: Persona = intent.getSerializableExtra("obj") as Persona
 //        binding.tvVolver.text = p.toString()
 
-        val bundle = intent.getBundleExtra("objeto")
-        val nom = bundle!!.getString("nombre1")
-        val eda = bundle!!.getString("edad1")
-        val p: Persona = bundle!!.getSerializable("persona") as Persona
+//        val bundle = intent.getBundleExtra("objeto")
+//        val nom = bundle!!.getString("nombre1")
+//        val eda = bundle!!.getString("edad1")
+//        val p: Persona = bundle!!.getSerializable("persona") as Persona
 
-        binding.tvVolver.text = p.toString()
+//        binding.tvVolver.text = p.toString()
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -38,6 +40,25 @@ class Ventana2 : AppCompatActivity() {
         }
 
         binding.btVolver.setOnClickListener {
+            finish()
+        }
+
+        binding.btVolverVentana1.setOnClickListener{
+            val stringToPassBack = binding.etValorADevolver.text.toString()
+
+            val intent = Intent()
+            intent.putExtra("keyName", stringToPassBack)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+
+        }
+
+        binding.btVolverVentana12.setOnClickListener{
+            val stringToPassBack = binding.etValorADevolver.text.toString()
+
+            val intent = Intent()
+            intent.putExtra("keyName", stringToPassBack)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
     }

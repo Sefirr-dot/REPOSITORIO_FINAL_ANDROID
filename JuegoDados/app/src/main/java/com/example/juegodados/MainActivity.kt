@@ -2,6 +2,7 @@ package com.example.juegodados
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -61,6 +62,8 @@ class MainActivity : AppCompatActivity() {
                 binding.txtContadorPuntosJ1.text = contadorPuntosJ1.toString()
                 binding.txtContadorTiradasJ1.text = contadorTiradasJ1.toString()
 
+            } else {
+                Toast.makeText(this, "El jugador 1 ya ha hecho las 5 tiradas", Toast.LENGTH_SHORT).show()
             }
             if((contadorTiradasJ1==5 && contadorTiradasJ2==5)&& !salir){
                 binding.btReiniciar.visibility = View.VISIBLE
@@ -103,6 +106,8 @@ class MainActivity : AppCompatActivity() {
                 binding.txtContadorPuntosJ2.text = contadorPuntosJ2.toString()
                 binding.txtContadorTiradasJ2.text = contadorTiradasJ2.toString()
 
+            }else {
+                Toast.makeText(this, "El jugador 2 ya ha hecho las 5 tiradas", Toast.LENGTH_SHORT).show()
             }
 
             if((contadorTiradasJ1==5 && contadorTiradasJ2==5) && !salir){
@@ -120,7 +125,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btReiniciar.setOnClickListener{
             salir = false
-
+            binding.imgDados1.setImageResource(R.drawable.dadosiniciales)
+            binding.imgDados2.setImageResource(R.drawable.dadosiniciales)
             contadorPuntosJ1=0
             contadorTiradasJ1=0
             contadorPuntosJ2=0

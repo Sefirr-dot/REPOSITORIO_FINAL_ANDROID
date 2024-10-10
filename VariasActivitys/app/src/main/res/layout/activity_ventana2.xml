@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="38dp"
+        android:layout_marginBottom="376dp"
         android:text="Volver"
+        app:layout_constraintBottom_toTopOf="@+id/etValorADevolver"
         app:layout_constraintStart_toStartOf="@+id/btVolver"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,5 +41,42 @@
         android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btVolver" />
+
+    <EditText
+        android:id="@+id/etValorADevolver"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Valor a devolver a la ventana 1"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/btVolverVentana1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolver" />
+
+    <Button
+        android:id="@+id/btVolverVentana1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="31dp"
+        android:text="Volver a la ventana 1"
+        app:layout_constraintBottom_toTopOf="@+id/btVolverVentana12"
+        app:layout_constraintStart_toStartOf="@+id/btVolverVentana12"
+        app:layout_constraintTop_toBottomOf="@+id/etValorADevolver" />
+
+    <Button
+        android:id="@+id/btVolverVentana12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="102dp"
+        android:text="Volver a la ventana 1 Actual"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btVolverVentana1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
