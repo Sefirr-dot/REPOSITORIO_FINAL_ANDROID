@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btCuantas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Cuantas"
+        app:layout_constraintBottom_toTopOf="@+id/btResumen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btValidar"
+        app:layout_constraintTop_toTopOf="@+id/btValidar" />
+
+    <Button
+        android:id="@+id/btResumen"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginBottom="148dp"
+        android:text="Resumen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btReiniciar"
+        app:layout_constraintTop_toTopOf="@+id/cbASIR" />
+
+    <Button
+        android:id="@+id/btReiniciar"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="150dp"
+        android:text="Reiniciar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btResumen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="621dp"
+        android:layout_height="135dp"
+        app:layout_constraintBottom_toTopOf="@+id/swAnonimo"
+        app:srcCompat="@android:drawable/bottom_bar"
+        tools:layout_editor_absoluteX="-131dp" />
+
+    <TextView
+        android:id="@+id/txtEncuesta"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="49dp"
+        android:text="Encuesta"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="22dp"
+        android:text="Nombre"
+        app:layout_constraintEnd_toStartOf="@+id/etNoombre"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/etNoombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tu Nombre"
+        android:inputType="text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtNombre"
+        app:layout_constraintEnd_toStartOf="@+id/swAnonimo"
+        app:layout_constraintStart_toEndOf="@+id/txtNombre" />
+
+    <Switch
+        android:id="@+id/swAnonimo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginBottom="502dp"
+        android:text="Anonimo"
+        app:layout_constraintBottom_toTopOf="@+id/txtLista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etNoombre"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSistemaOperativo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
+        android:text="Sistema operativo preferido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNoombre" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="231dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/cnDAW"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtSistemaOperativo">
+
+        <RadioButton
+            android:id="@+id/rbMac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mac" />
+
+        <RadioButton
+            android:id="@+id/rbWindows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Windows" />
+
+        <RadioButton
+            android:id="@+id/rbLinux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Linux" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtEspecialidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginBottom="343dp"
+        android:text="Especialidad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cbDAM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="6dp"
+        android:text="DAM"
+        app:layout_constraintEnd_toEndOf="@+id/txtEspecialidad"
+        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad" />
+
+    <CheckBox
+        android:id="@+id/cnDAW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DAW"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cbDAM"
+        app:layout_constraintStart_toEndOf="@+id/txtHorasEstudio" />
+
+    <CheckBox
+        android:id="@+id/cbASIR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:text="ASIR"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cnDAW"
+        app:layout_constraintEnd_toEndOf="@+id/skHorasEstudio" />
+
+    <TextView
+        android:id="@+id/txtHorasEstudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="215dp"
+        android:text="Horas de estudio"
+        app:layout_constraintEnd_toStartOf="@+id/txtProgresoSK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbDAM" />
+
+    <SeekBar
+        android:id="@+id/skHorasEstudio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="86dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtHorasEstudio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtHorasEstudio"
+        app:layout_constraintTop_toTopOf="@+id/txtHorasEstudio" />
+
+    <Button
+        android:id="@+id/btValidar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="4dp"
+        android:text="Validar"
+        app:layout_constraintBottom_toTopOf="@+id/btReiniciar"
+        app:layout_constraintEnd_toStartOf="@+id/btCuantas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHorasEstudio" />
+
+    <TextView
+        android:id="@+id/txtProgresoSK"
+        android:layout_width="59dp"
+        android:layout_height="19dp"
+        android:layout_marginBottom="99dp"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="@+id/btResumen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtLista"
+        android:layout_width="413dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/skHorasEstudio"
+        app:layout_constraintVertical_bias="0.946" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
