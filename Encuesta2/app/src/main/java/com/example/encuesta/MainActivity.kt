@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
             Almacen.addEstudiante(estu)
             val intent: Intent = Intent(this, VentanaAux::class.java)
-            intent.putExtra("estudiante", estu)
+            intent.putExtra("ESTUDIANTE", estu)
             startActivity(intent)
         }
         binding.btReiniciar.setOnClickListener{

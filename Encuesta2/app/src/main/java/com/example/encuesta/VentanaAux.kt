@@ -1,16 +1,19 @@
 package com.example.encuesta
 
+import adaptador.EstudianteAdaptador
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.encuesta.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.encuesta.databinding.ActivityVentanaAuxBinding
-import modelo.Estudiante
+import modelo.Almacen
 
 class VentanaAux : AppCompatActivity() {
     lateinit var binding: ActivityVentanaAuxBinding
+    val estudiante = Almacen.getEstudiante()
     private val SECOND_ACTIVITYREQUEST_CODE = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,17 +28,11 @@ class VentanaAux : AppCompatActivity() {
         binding.btVolver.setOnClickListener{
             finish()
         }
-        val estudiante = intent.getSerializableExtra("estudiante") as Estudiante
-        if(estudiante != null ){
-            binding.txtNom.text = estudiante.nombre
-            binding.txtSists.text = estudiante.sistemaOperativo
-            var auxEspe = ""
-            for(esp in estudiante.especialidad){
-                auxEspe+=" "+esp
-            }
-            binding.txtEspee.text = auxEspe
-            binding.txtHours.text = estudiante.horasEstudio.toString()
-        }
+
+        val  recyclerView: RecyclerView = findViewById(R.id.rvEstudiantes)
+        recyclerView.layoutManager =  LinearLayoutManager(this)
+        val planetAdapter= EstudianteAdaptador(estudiante)
+        recyclerView.adapter = planetAdapter
 
     }
 }
