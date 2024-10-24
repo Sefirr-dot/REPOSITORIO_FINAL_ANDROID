@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9DDBE9"
     tools:context=".VentanaAux">
 
     <Button
@@ -22,6 +23,7 @@
         android:id="@+id/rvEstudiantes"
         android:layout_width="368dp"
         android:layout_height="549dp"
+        android:background="#B7E6BA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"

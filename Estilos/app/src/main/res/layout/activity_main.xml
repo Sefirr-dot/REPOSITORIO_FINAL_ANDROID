@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.456"
+            app:layout_constraintVertical_bias="0.325"
             app:rippleColor="#1F4E80" />
 
         <TextView
@@ -60,6 +60,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bt2" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="304dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="304dp" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="27dp"
+            tools:layout_editor_absoluteY="93dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="308dp"
+            android:layout_height="34dp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="455dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="159dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
