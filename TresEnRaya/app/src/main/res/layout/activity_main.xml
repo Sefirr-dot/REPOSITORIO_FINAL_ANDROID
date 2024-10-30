@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#958080"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/fondo">
+
+        <!-- Título del Juego -->
+
+        <!-- GridLayout para el tablero 3x3 -->
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="140dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:background="#F16810"
+            android:backgroundTint="#D9641F"
+            android:fontFamily="@font/almendra_display"
+            android:gravity="center"
+            android:text="3 en Raya"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <!-- Casillas del tablero como ImageView -->
+            <ImageView
+                android:id="@+id/imageView00"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView01"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView02"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView21"
+                style="" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                style="" />
+        </GridLayout>
+
+        <!-- Texto para mensajes (quién ganó, empate) -->
+
+        <!-- Botón de reinicio -->
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#050404"
+            android:paddingTop="16dp"
+            android:text="Reiniciar"
+            app:cornerRadius="2dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="961dp"
+            android:layout_height="179dp"
+            app:srcCompat="@drawable/murcielagos" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
