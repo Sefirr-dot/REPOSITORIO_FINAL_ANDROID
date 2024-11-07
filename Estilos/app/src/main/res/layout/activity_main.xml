@@ -99,6 +99,23 @@
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="159dp" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_launcher_background"
+            app:startIconContentDescription="Holaa"
+            android:id="@+id/textField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="asd"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

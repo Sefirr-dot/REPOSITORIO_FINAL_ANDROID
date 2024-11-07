@@ -10,13 +10,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.transition.Visibility
 import com.example.encuesta.databinding.ActivityMainBinding
-import modelo.Almacen
+import Auxiliar.Conexion  // Importamos la clase Conexion
 import modelo.Estudiante
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,59 +29,69 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
-        binding.swAnonimo.setOnCheckedChangeListener { buttonView, isChecked ->
+        // Configuración del switch para nombre anónimo
+        binding.swAnonimo.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 binding.etNoombre.isEnabled = false
-                binding.etNoombre.text=null
+                binding.etNoombre.text = null
             } else {
                 binding.etNoombre.isEnabled = true
-
-
             }
         }
-            val labels = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
 
-            binding.skHorasEstudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-                override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                    val labelIndex = (progress / 10).coerceIn(0, labels.size - 1)
-                    binding.txtProgresoSK.text = labels[labelIndex]
-                }
+        // Configuración del SeekBar
+        val labels = arrayOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+        binding.skHorasEstudio.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                val labelIndex = (progress / 10).coerceIn(0, labels.size - 1)
+                binding.txtProgresoSK.text = labels[labelIndex]
+            }
 
-                override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
 
-                override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-            })
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
 
-        binding.btValidar.setOnClickListener{
-            var especiliadades: ArrayList<String> = ArrayList()
+        // Botón de Validar
+        binding.btValidar.setOnClickListener {
+            val especialidades = ArrayList<String>()
             var sistemaFav = ""
-            if (binding.cbDAM.isChecked) {
-                especiliadades.add("DAM")
-            }
-            if (binding.cbASIR.isChecked) {
-                especiliadades.add("ASIR")
-            }
-            if (binding.cnDAW.isChecked) {
-                especiliadades.add("DAW")
-            }
-            if(binding.rbMac.isChecked){
-                sistemaFav="Mac"
-            }
-            if(binding.rbWindows.isChecked){
-                sistemaFav="Windows"
-            }
-            if(binding.rbLinux.isChecked) {
-                sistemaFav = "Linux"
-            }
-            var estu = Estudiante(binding.etNoombre.text.toString(),sistemaFav,especiliadades,binding.txtProgresoSK.text.toString().toInt())
 
-            Almacen.addEstudiante(estu)
-            val intent: Intent = Intent(this, VentanaAux::class.java)
-            intent.putExtra("ESTUDIANTE", estu)
-            startActivity(intent)
+            // Obtener especialidades seleccionadas
+            if (binding.cbDAM.isChecked) especialidades.add("DAM")
+            if (binding.cbASIR.isChecked) especialidades.add("ASIR")
+            if (binding.cnDAW.isChecked) especialidades.add("DAW")
+
+            // Obtener sistema operativo favorito
+            sistemaFav = when {
+                binding.rbMac.isChecked -> "Mac"
+                binding.rbWindows.isChecked -> "Windows"
+                binding.rbLinux.isChecked -> "Linux"
+                else -> ""
+            }
+
+            // Crear objeto Estudiante
+            val estudiante = Estudiante(
+                nombre = binding.etNoombre.text.toString(),
+                sistemaOperativo = sistemaFav,
+                especialidad = especialidades,
+                horasEstudio = binding.txtProgresoSK.text.toString().toInt()
+            )
+
+            // Insertar estudiante en la base de datos
+            val id = Conexion.addPersona(this, estudiante)
+            if (id != -1L) {
+                Toast.makeText(this, "Estudiante guardado con éxito", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, VentanaAux::class.java)
+                intent.putExtra("ESTUDIANTE", estudiante)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Error al guardar el estudiante", Toast.LENGTH_SHORT).show()
+            }
         }
-        binding.btReiniciar.setOnClickListener{
+
+        // Botón de Reiniciar
+        binding.btReiniciar.setOnClickListener {
             binding.etNoombre.text.clear()
             binding.radioGroup.clearCheck()
             binding.cbASIR.isChecked = false
@@ -89,21 +99,20 @@ class MainActivity : AppCompatActivity() {
             binding.cnDAW.isChecked = false
             binding.skHorasEstudio.progress = 0
             binding.txtProgresoSK.text = "1"
-            Almacen.clearlistaEstudiantes()
             binding.txtLista.text = ""
         }
-        binding.btCuantas.setOnClickListener{
-            Toast.makeText(this, "Numero de estudiantes: " + Almacen.getEstudiante().size, Toast.LENGTH_SHORT).show()
+
+        // Botón de Cantidad de Estudiantes
+        binding.btCuantas.setOnClickListener {
+            val numEstudiantes = Conexion.obtenerPersonas(this).size
+            Toast.makeText(this, "Número de estudiantes: $numEstudiantes", Toast.LENGTH_SHORT).show()
         }
 
-        binding.btResumen.setOnClickListener{
-            var auxiliar = ""
-            for (Almacen in Almacen.listaEstudiantes) {
-                auxiliar += Almacen.toString()+"\n"
-            }
-            binding.txtLista.text = auxiliar
-
+        // Botón de Resumen de Estudiantes
+        binding.btResumen.setOnClickListener {
+            val estudiantes = Conexion.obtenerPersonas(this)
+            val resumen = estudiantes.joinToString(separator = "\n") { it.toString() }
+            binding.txtLista.text = resumen
         }
-
-
-}}
+    }
+}

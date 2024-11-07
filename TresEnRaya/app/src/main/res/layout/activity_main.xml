@@ -25,6 +25,7 @@
             android:layout_width="140dp"
             android:layout_height="47dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
             android:background="#F16810"
             android:backgroundTint="#D9641F"
             android:fontFamily="@font/almendra_display"
@@ -86,9 +87,11 @@
         <!-- Botón de reinicio -->
         <Button
             android:id="@+id/resetButton"
+            style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:backgroundTint="#050404"
             android:paddingTop="16dp"
             android:text="Reiniciar"
