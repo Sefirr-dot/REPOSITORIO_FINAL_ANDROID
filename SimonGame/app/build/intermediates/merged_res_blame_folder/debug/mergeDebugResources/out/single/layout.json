@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\miguel\\.gradle\\daemon\\8.7\\com.example.simongame.app-mergeDebugResources-30:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\miguel\\.gradle\\daemon\\8.7\\com.example.simongame.app-main-33:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.simongame.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.simongame.app-main-33:/layout/activity_main.xml"
+    }
+]
