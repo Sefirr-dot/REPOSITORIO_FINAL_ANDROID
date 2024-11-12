@@ -1,15 +1,13 @@
 package modelo
 
 object Almacen {
-    var listaEstudiantes = ArrayList<Estudiante>()
-    fun addEstudiante(estudiante: Estudiante) {
-        listaEstudiantes.add(estudiante)
+    private val estudiantes = ArrayList<Estudiante>()
 
+    fun agregarEstudiante(estudiante: Estudiante) {
+        estudiantes.add(estudiante)
     }
+
     fun getEstudiante(): ArrayList<Estudiante> {
-        return listaEstudiantes
-    }
-    fun clearlistaEstudiantes() {
-        listaEstudiantes.clear()
+        return estudiantes
     }
 }

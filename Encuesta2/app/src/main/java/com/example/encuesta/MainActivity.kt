@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.encuesta.databinding.ActivityMainBinding
 import Auxiliar.Conexion  // Importamos la clase Conexion
+
 import modelo.Estudiante
 
 class MainActivity : AppCompatActivity() {
