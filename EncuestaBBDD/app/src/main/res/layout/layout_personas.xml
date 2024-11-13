@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/txtNombre1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del estudiante"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/txtSistemaOperativo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sistema Operativo"
+        android:textSize="14sp"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/txtEspecialidad1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Especialidad"
+        android:textSize="14sp"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/txtHorasEstudio1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Horas de Estudio"
+        android:textSize="14sp"/>
+
+</LinearLayout>
