@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "130051268410",
+    "project_id": "fir-primeros-pasos-dam2t",
+    "storage_bucket": "fir-primeros-pasos-dam2t.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130051268410:android:6479449da2e6db4769ba03",
+        "android_client_info": {
+          "package_name": "com.example.basedatosfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130051268410-brfjmk097of23cr9eed1ck00a2scvmk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.basedatosfirebase",
+            "certificate_hash": "b4ebcaca2cf3ba007e9e1949b60358937c50a58c"
+          }
+        },
+        {
+          "client_id": "130051268410-iv42g2s7h3j18bmau04pv4di9t4skdtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX4j9lsbK0QxsPUz20dP9fbmTnBeaA5N0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130051268410-iv42g2s7h3j18bmau04pv4di9t4skdtf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
