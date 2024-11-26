@@ -37,6 +37,12 @@ kotlin {
             implementation(projects.shared)
             implementation(libs.kotlinx.serialization.core)
         }
+        val commonMain by getting {
+            dependencies {
+                implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
+                // ... other common dependencies
+            }
+        }
     }
 }
 

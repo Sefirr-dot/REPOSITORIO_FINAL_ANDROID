@@ -62,3 +62,6 @@ android {
         minSdk = 24
     }
 }
+dependencies {
+    implementation(libs.firebase.auth.ktx)
+}
