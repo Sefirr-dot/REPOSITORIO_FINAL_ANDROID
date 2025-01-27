@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.detail.DetailActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".ui.detail.DetailActivity">
+        android:orientation="vertical">
 
         <!-- Title -->
         <TextView
@@ -21,9 +21,22 @@
             android:padding="16dp"
             android:text="Place Name" />
 
-        <!-- TODO: Add a MapView and VideoPlayerView -->
+        <!-- Google Map -->
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mvMap"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
 
+        <!-- Button to open video -->
+        <Button
+            android:id="@+id/btVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Watch Video"
+            android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:textStyle="bold" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
