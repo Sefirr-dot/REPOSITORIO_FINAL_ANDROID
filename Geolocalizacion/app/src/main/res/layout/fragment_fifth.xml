@@ -8,8 +8,8 @@
     tools:context=".FifthFragment">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="741dp"
-        android:src="@drawable/santiago" />
+        android:id="@+id/imgvMuseo"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/museodelprado" />
 </FrameLayout>

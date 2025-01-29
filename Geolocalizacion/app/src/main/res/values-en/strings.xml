@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ENGLISH -->
+    <string name="app_name">Geolocation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="silenciar_switch">Mute</string>
+    <string name="informacion">Information</string>
+    <string name="nombre_app">App Name: Geolocation\nVersion: 1.0\nAuthor: Miguel-León García</string>
+    <string name="aceptar">Accept</string>
+    <string name="ver_video">Watch Video</string>
+</resources>

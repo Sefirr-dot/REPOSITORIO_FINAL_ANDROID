@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.activity.enableEdgeToEdge
@@ -12,15 +13,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.example.tabsfragments.PageAdapter
+import com.example.geolocalizacion.PageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tableLayout: TabLayout
     private lateinit var viewPager: ViewPager2
     private lateinit var muteSwitch: Switch
-    private lateinit var infoImageView: ImageView // Imagen que al hacer click mostrará el dialog
+    private lateinit var infoImageView: Button // Imagen que al hacer click mostrará el dialog
     private var mediaPlayer: MediaPlayer? = null
     private var isMuted = false
 
@@ -84,9 +86,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showInfoDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Información")
-        builder.setMessage("Nombre de la app: GeoLocalización\nVersión: 1.0\nAutor: Tu Nombre")
-        builder.setPositiveButton("Aceptar") { dialog, _ ->
+        builder.setTitle(getString(R.string.informacion))
+        builder.setMessage(getString(R.string.nombre_app))
+        builder.setPositiveButton(getString(R.string.aceptar)) { dialog, _ ->
             dialog.dismiss()
         }
         builder.setCancelable(true)

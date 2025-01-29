@@ -12,6 +12,7 @@
         android:id="@+id/imgvMuseo"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="#E2AFAF"
         android:src="@drawable/museodelprado" />
 
 </FrameLayout>

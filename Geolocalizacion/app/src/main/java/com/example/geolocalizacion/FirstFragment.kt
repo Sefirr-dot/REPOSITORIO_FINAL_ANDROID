@@ -40,8 +40,9 @@ class FirstFragment : Fragment() {
 
         binding.imgvMuseo.setOnClickListener {
 
-            val latitude = 40.453054
-            val longitude = -3.688344
+            //40.413912471264446, -3.6921378320617664
+            val latitude = 40.413912471264446
+            val longitude = -3.6921378320617664
             val video = R.raw.prado
 
             val intent = Intent(requireContext(), DetailActivity::class.java).apply {

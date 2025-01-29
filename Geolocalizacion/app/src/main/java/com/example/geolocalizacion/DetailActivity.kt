@@ -12,8 +12,7 @@ import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.semantics.dismiss
-import androidx.compose.ui.semantics.text
+
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.geolocalizacion.databinding.ActivityDetailBinding

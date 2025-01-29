@@ -32,21 +32,24 @@
         android:id="@+id/mute_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Silenciar"
+        android:text="@string/silenciar_switch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viewPager" />
 
-    <ImageView
+    <Button
         android:id="@+id/imgInfo"
-        android:layout_width="74dp"
+        android:layout_width="60dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="25dp"
+        android:background="@drawable/info"
+        android:backgroundTint="#EF9191"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mute_switch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
         tools:srcCompat="@drawable/info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
